@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>JavaScript Callbacks</h2>
+    <p id="demo"></p>
+    <script>
+
+        function myDisplayer(some) {
+            document.getElementById("demo").innerHTML = some
+        }
+        function getFile(myCallBack) {
+            let req = new XMLHttpRequest();
+            req.open('GET', 'myCar.html')
+            req.onload = function () {
+                if (req.status == 200) {
+                    myCallBack(this.responseText)
+                }
+                else {
+                    myCallBack("Error", req.status)
+                }
+            }
+            req.send()
+        }
+        getFile(myDisplayer)
+
+        // function myDisplayer(some) {
+        // document.getElementById("demo").innerHTML=some
+        // }
+
+        // function myDisplayer(some) {
+        //     document.getElementById("demo").innerHTML = some;
+        // }
+        // let p = new Promise((resolve, reject) => {
+        //     let req = new XMLHttpRequest();
+        //     req.open('GET', 'myCar.html')
+        //     req.onload = function () {
+        //         if (req.status == 200) {
+        //             resolve(req.response)
+        //         }
+        //         else {
+        //             reject("Error", req.status)
+        //         }
+        //     }
+        //     req.send()
+        // })
+        // p.then((message) => {
+        //     myDisplayer(message)
+        // }).catch((error) => {
+        //     myDisplayer(message)
+        // })
+    </script>
+
+</body>
+
+</html>
