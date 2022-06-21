@@ -1,0 +1,1 @@
+console.log("Ajax, Async, Callback and Promise");
