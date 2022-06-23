@@ -27,15 +27,16 @@ function makeAJAXCall(methodType, url, callback, async = true, data = null) {
     console.log(methodType + "request send to the server at :=> " + showTime());
 }
 
-const getURL = "http://localhost:3000/employee";
+const getURL = "http://localhost:3000/employees/1";
 function getUserDetails(data) {
     console.log("Get user data at :=> " + showTime() + "data:=> " + data)
 }
 
-makeAJAXCall("GET", getURL, getUserDetails, true);
+
+makeAJAXCall("GET", getURL, getUserDetails, false);
 console.log("made GET AJAXCall to server at :=> " + showTime());
 
-const deleteURL = "http://localhost:3000/employees/1";
+const deleteURL = "http://localhost:3000/employees/14";
 function userDeleted(data){
     console.log("USer Deleted at:=> "+ showTime() +" data:=> " +data)
 }
